@@ -3,16 +3,9 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import styles from '../styles/Home.module.scss';
+import MovieDetail from './MovieDetail';
 import SearchBar from './SearchBar';
-
-const ActiveLink = ({ children, href }) => {
-  const router = useRouter();
-  return (
-    <Link href={href}>
-      <a className={`${router.asPath === href ? 'red' : ''}`}>{children}</a>
-    </Link>
-  );
-};
+import SearchResult from './SearchResult';
 
 const Layout = ({ children }) => {
   const [loading, setLoading] = useState(false);
@@ -42,38 +35,10 @@ const Layout = ({ children }) => {
       </nav>
 
       <SearchBar handleSearch={handleSearch}></SearchBar>
+
+      <SearchResult></SearchResult>
       
-      <section>
-        <p>{12312} results</p>
-        <ul>
-          <li>
-            <ActiveLink href={'/district1'}>
-              <h2>district1</h2>
-            </ActiveLink>
-          </li>
-          <li>
-            <ActiveLink href={'/district2'}>
-              <h2>district2</h2>
-            </ActiveLink>
-          </li>
-          <li>
-            <ActiveLink href={'/district3'}>
-              <h2>district3</h2>
-            </ActiveLink>
-          </li>
-          <li>
-            <ActiveLink href={'/district4'}>
-              <h2>district4</h2>
-            </ActiveLink>
-          </li>
-          <li>
-            <ActiveLink href={'/district5'}>
-              <h2>district5</h2>
-            </ActiveLink>
-          </li>
-        </ul>
-      </section>
-      <section>{children}</section>
+      <MovieDetail>{children}</MovieDetail>
     </div>
   );
 };
