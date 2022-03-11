@@ -1,6 +1,6 @@
 // From https://codesandbox.io/s/ywcrm
-import React, { useCallback, useEffect, useState, useRef } from "react";
-import PropTypes from "prop-types";
+import React, { useCallback, useEffect, useState, useRef } from 'react';
+import PropTypes from 'prop-types';
 
 const MultiRangeSlider = ({ min, max, onChange }) => {
   const [minVal, setMinVal] = useState(min);
@@ -54,7 +54,7 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
           minValRef.current = value;
         }}
         className="thumb thumb--left"
-        style={{ zIndex: minVal > max - 100 && "5" }}
+        style={{ zIndex: minVal > max - 100 && '5' }}
       />
       <input
         type="range"
@@ -82,7 +82,7 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
 MultiRangeSlider.propTypes = {
   min: PropTypes.number.isRequired,
   max: PropTypes.number.isRequired,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
 };
 
 export default MultiRangeSlider;

@@ -1,5 +1,89 @@
 @import './_variables.scss';
 
-.container {
-  flex: 2 1 520px;
+.titleSection {
+  display: flex;
+  flex: 0 1 40%;
+  gap: 20px;
+
+  .titleImage {
+    flex: 0 1 40%;
+    img {
+      width: 100%;
+      border-radius: 5px;
+    }
+  }
+
+  .titleDetails {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1;
+
+    .watchListButton {
+      width: 100px;
+      align-self: end;
+    }
+
+    h2 {
+      font-size: 36px;
+    }
+
+    .summaryBar {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 0;
+
+      li {
+        &:nth-child(2),
+        &:nth-child(3) {
+          &:after {
+            content: '·';
+            margin: 6px;
+          }
+        }
+
+        &.ratingButton {
+          border: 1px solid $primary;
+          padding: 4px 6px;
+          border-radius: 8px;
+          margin-right: 12px;
+        }
+      }
+    }
+  }
+}
+
+.detailSection {
+  border-top: 1px solid $primary;
+  border-bottom: 1px solid $primary;
+  margin: 22px 0;
+}
+
+.ratingsSection {
+  display: flex;
+  font-size: 20px;
+
+  li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 0 1 33.3%;
+    flex-direction: column;
+    gap: 10px;
+
+    &:not(:last-child):after {
+      content: '';
+      position: absolute;
+      right: -1px;
+      width: 1px;
+      height: 100%;
+      background: $primary;
+    }
+
+    span:last-child {
+      font-size: 14px;
+    }
+  }
 }
