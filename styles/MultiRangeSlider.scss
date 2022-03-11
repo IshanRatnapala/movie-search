@@ -1,4 +1,11 @@
 // From https://codesandbox.io/s/ywcrm
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+}
+
 .slider {
   position: relative;
   width: 200px;
@@ -30,17 +37,19 @@
 
 .slider__left-value,
 .slider__right-value {
-  color: #dee2e6;
-  font-size: 12px;
-  margin-top: 20px;
+  // color: #dee2e6;
+  // font-size: 12px;
+  // margin-top: 20px;
 }
 
 .slider__left-value {
-  left: 6px;
+  left: -40px;
+  top: -10px;
 }
 
 .slider__right-value {
-  right: -4px;
+  right: -40px;
+  top: -10px;
 }
 
 /* Removing the default appearance */

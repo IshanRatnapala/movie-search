@@ -1,11 +1,10 @@
 import Head from 'next/head';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
-import styles from '../styles/Home.module.scss';
+import React, { useState } from 'react';
+import Navbar from './Navbar';
 import MovieDetail from './MovieDetail';
 import SearchBar from './SearchBar';
 import SearchResult from './SearchResult';
+import styles from '../styles/Layout.module.scss';
 
 const Layout = ({ children }) => {
   const [loading, setLoading] = useState(false);
@@ -23,22 +22,19 @@ const Layout = ({ children }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {JSON.stringify(searchResults)}
-
-      <nav>
-        <h1>
-          <Link href={'/'}>Movie Search</Link>
-        </h1>
-        <span>
-          <Link href={'/watch-list'}>Watchlist</Link>
-        </span>
-      </nav>
+      <Navbar></Navbar>
 
       <SearchBar handleSearch={handleSearch}></SearchBar>
 
-      <SearchResult></SearchResult>
-      
-      <MovieDetail>{children}</MovieDetail>
+      <main className={styles.main}>
+        <SearchResult></SearchResult>
+
+        <MovieDetail>
+          <p> {JSON.stringify(searchResults)}</p>
+
+          {children}
+        </MovieDetail>
+      </main>
     </div>
   );
 };

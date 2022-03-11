@@ -1,9 +1,10 @@
 import React from 'react';
 import ActiveLink from './ActiveLink';
+import styles from '../styles/SearchResult.module.scss';
 
 function SearchResult() {
   return (
-    <section>
+    <section className={styles.container}>
       <h2>SearchResult</h2>
 
       <p>{12312} results</p>
