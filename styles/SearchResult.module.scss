@@ -2,4 +2,40 @@
 
 .container {
   flex: 1 0 240px;
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+
+      a {
+        display: flex;
+        gap: 10px;
+        border: 1px solid rebeccapurple;
+        padding: 10px;
+        margin: 2px 5px;
+
+        &:hover {
+          background-color: #4a1c77;
+        }
+
+        img {
+          width: 100px;
+          height: 100px;
+          object-fit: cover;
+        }
+
+        div {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          h3 {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
 }

@@ -8,10 +8,10 @@ import styles from '../styles/Layout.module.scss';
 
 const Layout = ({ children }) => {
   const [loading, setLoading] = useState(false);
-  const [searchResults, setSearchResults] = useState([]);
+  const [query, setQuery] = useState({});
 
   const handleSearch = ({ query, type, minYear, maxYear }) => {
-    setSearchResults([{ query, type, minYear, maxYear }]);
+    setQuery({ query, type, minYear, maxYear });
   };
 
   return (
@@ -27,10 +27,10 @@ const Layout = ({ children }) => {
       <SearchBar handleSearch={handleSearch}></SearchBar>
 
       <main className={styles.main}>
-        <SearchResult></SearchResult>
+        <SearchResult query={query}></SearchResult>
 
         <MovieDetail>
-          <p> {JSON.stringify(searchResults)}</p>
+          <p> {JSON.stringify(query)}</p>
 
           {children}
         </MovieDetail>

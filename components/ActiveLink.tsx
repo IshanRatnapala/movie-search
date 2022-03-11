@@ -6,7 +6,7 @@ function ActiveLink({ children, href }) {
   const router = useRouter();
   return (
     <Link href={href}>
-      <a className={`${router.asPath === href ? 'red' : ''}`}>{children}</a>
+      <a className={`${router.asPath === href ? 'selected' : ''}`}>{children}</a>
     </Link>
   );
 }
