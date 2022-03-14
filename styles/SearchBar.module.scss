@@ -10,6 +10,7 @@
   gap: 40px;
   box-shadow: rgb(90 114 123 / 11%) 0px 7px 30px 0px;
   position: relative;
+  height: 115px;
 
   @media (max-width: $breakpoint-mobile) {
     gap: 20px;
@@ -63,6 +64,9 @@
 }
 
 .filters {
+  display: flex;
+  gap: 20px;
+
   .yearSelect {
     width: 280px;
     display: flex;

@@ -17,7 +17,7 @@ function SearchBar({ handleSearch }) {
     <section className={styles.container}>
       <div className={styles.searchBox}>
         <label className={styles.searchIcon}>
-          <img src="https://img.icons8.com/ios-glyphs/45/000000/search--v1.png" alt="search icon" />
+          <img src="/search.png" alt="search icon" />
         </label>
         <input placeholder="Search" name="query" type="search" {...bindQuery} />
       </div>

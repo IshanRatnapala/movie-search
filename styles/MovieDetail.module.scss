@@ -1,5 +1,13 @@
 @import './_variables.scss';
 
+@mixin wishlistIcon($url) {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: url($url) 50% 50% no-repeat;
+  background-size: 100%;
+}
+
 .titleSection {
   display: flex;
   flex: 0 1 40%;
@@ -21,8 +29,32 @@
     flex: 1 1;
 
     .watchListButton {
-      width: 100px;
+      width: 120px;
       align-self: end;
+      border: none;
+      font-size: 14px;
+      border-radius: 5px;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease-out;
+
+      .icon {
+        @include wishlistIcon('/bookmark.svg');
+      }
+
+      &:hover {
+        background-color: $light;
+        box-shadow: 0 10px 20px rgb(0 0 0 / 20%);
+        z-index: 1;
+      }
+
+      .activeIcon {
+        @include wishlistIcon('/bookmark-fill.svg');
+      }
     }
 
     h2 {
