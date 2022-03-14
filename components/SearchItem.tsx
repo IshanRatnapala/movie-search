@@ -14,7 +14,7 @@ function SearchItem({ item }) {
           height={100}
         />
         <div>
-          <h3 className={styles.title}>{item['Title']}</h3>
+          <h2 className={styles.title}>{item['Title']}</h2>
           <span className={styles.year}>{item['Year']}</span>
         </div>
       </ActiveLink>

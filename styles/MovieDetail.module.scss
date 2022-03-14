@@ -7,6 +7,7 @@
 
   .titleImage {
     flex: 0 1 40%;
+    max-width: 300px;
     img {
       width: 100%;
       border-radius: 5px;
@@ -45,7 +46,7 @@
         }
 
         &.ratingButton {
-          border: 1px solid $primary;
+          border: 1px solid $dark;
           padding: 4px 6px;
           border-radius: 8px;
           margin-right: 12px;
@@ -56,14 +57,15 @@
 }
 
 .detailSection {
-  border-top: 1px solid $primary;
-  border-bottom: 1px solid $primary;
+  border-top: 1px solid $dark;
+  border-bottom: 1px solid $dark;
   margin: 22px 0;
 }
 
 .ratingsSection {
   display: flex;
   font-size: 20px;
+  padding: 0;
 
   li {
     position: relative;
@@ -79,11 +81,12 @@
       right: -1px;
       width: 1px;
       height: 100%;
-      background: $primary;
+      background: $dark;
     }
 
     span:last-child {
       font-size: 14px;
+      text-align: center;
     }
   }
 }

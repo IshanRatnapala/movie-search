@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Movie Search</title>
+        <title>MOVIE SEARCH</title>
         <meta name="description" content="Get information on your favorite movies" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -26,10 +26,10 @@ const Layout = ({ children }) => {
       <SearchBar handleSearch={handleSearch}></SearchBar>
 
       <main className={styles.main}>
-        <section>
+        <section className={styles.leftSection}>
           <SearchResult query={query}></SearchResult>
         </section>
-        <section>
+        <section className={styles.rightSection}>
           {/* <p> {JSON.stringify(query)}</p> */}
           {children}
         </section>

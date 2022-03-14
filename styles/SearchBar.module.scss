@@ -1,13 +1,15 @@
 @import './_variables.scss';
 
 .container {
-  background: $primary;
-  color: $white;
-  padding: 1rem 2rem;
+  background: $light;
+  color: $dark;
+  padding: 0.8rem 2rem;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 40px;
+  box-shadow: rgb(90 114 123 / 11%) 0px 7px 30px 0px;
+  position: relative;
 
   @media (max-width: $breakpoint-mobile) {
     gap: 20px;
@@ -19,7 +21,7 @@
   position: relative;
   display: flex;
   flex: 1 0 310px;
-  color: #555;
+  color: $dark;
   @media (max-width: $breakpoint-mobile) {
     width: 100%;
     flex: 1 0 auto;
@@ -27,7 +29,7 @@
 
   .searchIcon {
     position: absolute;
-    color: $white;
+    color: $dark;
     height: 80px;
     display: flex;
     align-items: center;
@@ -47,10 +49,10 @@
     font-size: 30px;
     padding-left: 60px;
     background: transparent;
-    color: $white;
+    color: $dark;
 
     &::placeholder {
-      color: $white;
+      color: $dark;
       opacity: 0.7;
     }
 
@@ -60,32 +62,30 @@
   }
 }
 
-.yearSelect {
-  width: 280px;
-  // height: 50px;
-  display: flex;
-  flex-direction: column;
-  // gap: 15px;
-
-  > span {
-    display: block;
-    font-weight: bold;
-  }
-}
-
-.typeSelect {
-  // height: 50px;
-  display: flex;
-  flex-direction: column;
-  // gap: 15px;
-
-  > span {
-    display: block;
-    font-weight: bold;
-  }
-  .radioButtons {
+.filters {
+  .yearSelect {
+    width: 280px;
     display: flex;
-    gap: 5px;
-    padding-top: 5px;
+    flex-direction: column;
+
+    > span {
+      display: block;
+      font-weight: bold;
+    }
+  }
+
+  .typeSelect {
+    display: flex;
+    flex-direction: column;
+
+    > span {
+      display: block;
+      font-weight: bold;
+    }
+    .radioButtons {
+      display: flex;
+      gap: 5px;
+      padding-top: 5px;
+    }
   }
 }
