@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from '../styles/MovieDetail.module.scss';
+import Poster from './Poster';
 
 function MovieDetail({ movie }) {
   const [favorite, setFavorite] = useState(false);
@@ -8,7 +9,7 @@ function MovieDetail({ movie }) {
     <div className={styles.container}>
       <div className={styles.titleSection}>
         <div className={styles.titleImage}>
-          <img src={movie['Poster']} alt={movie['Title']} />
+          <Poster src={movie['Poster']} alt={movie['Title']}></Poster>
         </div>
         <div className={styles.titleDetails}>
           <button className={styles.watchListButton} onClick={(e) => setFavorite(!favorite)}>

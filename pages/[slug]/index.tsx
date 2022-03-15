@@ -10,5 +10,7 @@ export async function getServerSideProps({ query }) {
 }
 
 export default function Movie({ movie }) {
-  return <>{movie ? <MovieDetail movie={movie}></MovieDetail> : 'Loading'}</>;
+  return (
+    <>{!movie['Error'] ? <MovieDetail movie={movie}></MovieDetail> : <div>Movie not found</div>}</>
+  );
 }

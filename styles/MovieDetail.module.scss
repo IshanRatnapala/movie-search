@@ -17,9 +17,11 @@
     .titleImage {
       flex: 0 1 40%;
       max-width: 300px;
+      align-self: center;
       img {
         width: 100%;
         border-radius: 5px;
+        background-color: $gray;
       }
     }
 
