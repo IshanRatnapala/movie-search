@@ -4,10 +4,10 @@ import useInput from './../hooks/useInput';
 import styles from '../styles/SearchBar.module.scss';
 
 function SearchBar({ handleSearch }) {
-  const [query, bindQuery] = useInput('');
-  const [type, bindType] = useInput('ANY');
-  const [minYear, setMinYear] = useState(1975);
-  const [maxYear, setMaxYear] = useState(2022);
+  const { value: query, bind: bindQuery } = useInput('');
+  const { value: type, bind: bindType } = useInput('');
+  const { value: minYear, setValue: setMinYear } = useInput(1975);
+  const { value: maxYear, setValue: setMaxYear } = useInput(2022);
 
   useEffect(() => {
     handleSearch({ query, type, minYear, maxYear });
@@ -39,19 +39,19 @@ function SearchBar({ handleSearch }) {
           <span>TYPE</span>
           <div className={styles.radioButtons}>
             <label>
-              <input type="radio" value="ANY" name="type" defaultChecked />
+              <input type="radio" value="" name="type" defaultChecked />
               <span>Any</span>
             </label>
             <label>
-              <input type="radio" value="MOVIES" name="type" />
+              <input type="radio" value="movie" name="type" />
               <span>Movies</span>
             </label>
             <label>
-              <input type="radio" value="SERIES" name="type" />
+              <input type="radio" value="series" name="type" />
               <span>Series</span>
             </label>
             <label>
-              <input type="radio" value="EPISODES" name="type" />
+              <input type="radio" value="episode" name="type" />
               <span>Episodes</span>
             </label>
           </div>
