@@ -5,8 +5,27 @@ export const searchMovies = async ({ query, type, minYear, maxYear }, page: numb
     const searchParams = new URLSearchParams({ s: query.trim(), type, page: `${page}` });
     const res = await fetch(API_URL + searchParams);
     const { Search = [], totalResults = '0' } = await res.json();
+
+    const filteredResults = Search.filter((movie) => {
+      const [startYear, endYear] = movie['Year'].split('–');
+      let inRange = true;
+      if (endYear) {
+        if (endYear > maxYear) {
+          inRange = false;
+        }
+      } else {
+        if (startYear > maxYear) {
+          inRange = false;
+        }
+      }
+      if (startYear && startYear < minYear) {
+        inRange = false;
+      }
+      return inRange;
+    });
+
     return {
-      items: Search,
+      items: filteredResults,
       total: totalResults,
     };
   } catch (error) {
