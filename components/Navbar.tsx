@@ -9,7 +9,7 @@ function Navbar() {
         <Link href={'/'}>Movie Search</Link>
       </h1>
       <span>
-        <Link href={'/watch-list'}>Watchlist</Link>
+        <Link href={'/watchlist'}>Watchlist</Link>
       </span>
     </nav>
   );

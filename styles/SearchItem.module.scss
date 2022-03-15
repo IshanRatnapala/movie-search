@@ -7,7 +7,7 @@
     display: flex;
     gap: 10px;
     padding: 10px;
-    transition: all 0.2s ease-out;
+    transition: all 200ms ease-in-out;
     position: relative;
 
     &:hover {
@@ -21,15 +21,6 @@
       background-color: $light;
       border-right: 4px solid $dark;
       box-shadow: 0 2px 20px 0px rgb(0 0 0 / 12%);
-    }
-
-    .thumb {
-      width: 100px;
-      height: 100px;
-      flex: 0 0 100px;
-      object-fit: cover;
-      border-radius: 5px;
-      background-color: $gray;
     }
 
     div {

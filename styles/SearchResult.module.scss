@@ -7,6 +7,10 @@
   padding: 20px 10px 10px;
   transition: opacity 200ms ease-in-out;
 
+  @media (max-width: $breakpoint-mobile) {
+    max-height: 300px;
+  }
+
   .totalCount {
     font-size: 18px;
     padding: 0 10px 15px;

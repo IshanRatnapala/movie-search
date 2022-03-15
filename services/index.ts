@@ -1,3 +1,5 @@
+import { WatchList, WatchListItem } from '../types';
+
 const API_URL = `http://www.omdbapi.com/?apikey=ff896537&`;
 
 export const searchMovies = async ({ query, type, minYear, maxYear }, page: number = 1) => {
@@ -30,7 +32,6 @@ export const searchMovies = async ({ query, type, minYear, maxYear }, page: numb
     };
   } catch (error) {
     console.error(error);
-    alert('Something went wrong :(');
   }
 };
 
@@ -41,6 +42,22 @@ export const getMovie = async (id) => {
     return await res.json();
   } catch (error) {
     console.error(error);
-    alert('Something went wrong :(');
   }
+};
+
+export const getWatchList = () => {
+  const watchList: WatchList = JSON.parse(localStorage.getItem('watch-list') || '{}');
+  return watchList;
+};
+
+export const addToWatchList = (movieId: string, data: WatchListItem) => {
+  const watchList: WatchList = getWatchList();
+  watchList[movieId] = data;
+  localStorage.setItem('watch-list', JSON.stringify(watchList));
+};
+
+export const removeFromWatchList = (movieId: string) => {
+  const watchList: WatchList = getWatchList();
+  delete watchList[movieId];
+  localStorage.setItem('watch-list', JSON.stringify(watchList));
 };

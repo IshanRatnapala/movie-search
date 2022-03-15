@@ -17,7 +17,7 @@ function SearchBar({ handleSearch }) {
     <section className={styles.container}>
       <div className={styles.searchBox}>
         <label className={styles.searchIcon}>
-          <img src="/search.png" alt="search icon" />
+          <img src="/search.svg" alt="search icon" />
         </label>
         <input placeholder="Search" name="query" type="search" {...bindQuery} />
       </div>

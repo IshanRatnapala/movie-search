@@ -46,7 +46,6 @@ const Layout = ({ children }) => {
       <main className={styles.main}>
         <SearchResult searchQuery={query}></SearchResult>
         <section className={styles.rightSection} style={{ opacity: loading ? '0.5' : '1' }}>
-          <p> {JSON.stringify(query)}</p>
           {children}
         </section>
       </main>

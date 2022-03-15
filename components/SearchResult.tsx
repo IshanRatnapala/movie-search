@@ -48,12 +48,16 @@ function SearchResult({ searchQuery }) {
       ref={ref}
       style={{ opacity: loading ? '0.5' : '1' }}
     >
-      <span className={styles.totalCount}>{totalResults} RESULTS</span>
-      <ul className={styles.resultList}>
-        {searchResults.map((result) => (
-          <SearchItem key={result['imdbID']} item={result}></SearchItem>
-        ))}
-      </ul>
+      {!!searchResults.length && (
+        <>
+          <span className={styles.totalCount}>{totalResults} RESULTS</span>
+          <ul className={styles.resultList}>
+            {searchResults.map((result) => (
+              <SearchItem key={result['imdbID']} item={result}></SearchItem>
+            ))}
+          </ul>
+        </>
+      )}
     </section>
   );
 }

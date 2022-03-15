@@ -18,14 +18,9 @@
       flex: 0 1 40%;
       max-width: 300px;
       align-self: center;
-      img {
-        width: 100%;
-        border-radius: 5px;
-        background-color: $gray;
-      }
     }
 
-    .titleDetails {
+    .titleDetailsContainer {
       justify-content: space-between;
       display: flex;
       flex-direction: column;
@@ -43,6 +38,7 @@
         gap: 5px;
         padding: 10px;
         cursor: pointer;
+        transition: all 200ms ease-in-out;
 
         .icon {
           @include wishlistIcon('/bookmark.svg');
@@ -59,31 +55,37 @@
         }
       }
 
-      h2 {
-        font-size: 36px;
-      }
-
-      .summaryBar {
-        list-style: none;
+      .titleDetails {
         display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        padding: 0;
+        flex-direction: column;
+        gap: 10px;
 
-        li {
-          &:nth-child(2),
-          &:nth-child(3) {
-            &:after {
-              content: '·';
-              margin: 6px;
+        h2 {
+          font-size: 36px;
+        }
+
+        .summaryBar {
+          list-style: none;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          padding: 0;
+
+          li {
+            &:nth-child(2),
+            &:nth-child(3) {
+              &:after {
+                content: '·';
+                margin: 6px;
+              }
             }
-          }
 
-          &.ratingButton {
-            border: 1px solid $dark;
-            padding: 4px 6px;
-            border-radius: 8px;
-            margin-right: 12px;
+            &.ratingButton {
+              border: 1px solid $dark;
+              padding: 4px 6px;
+              border-radius: 8px;
+              margin-right: 12px;
+            }
           }
         }
       }
@@ -94,6 +96,7 @@
     border-top: 1px solid $dark;
     border-bottom: 1px solid $dark;
     margin: 22px 0;
+    padding: 22px 0;
   }
 
   .ratingsSection {

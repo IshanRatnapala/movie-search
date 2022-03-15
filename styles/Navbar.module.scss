@@ -3,9 +3,16 @@
 .container {
   background: $dark;
   color: $light;
-  padding: 0 2rem;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 35px;
+
+  a {
+    transition: all 200ms ease-in-out;
+    &:hover {
+      color: $gray;
+    }
+  }
 }

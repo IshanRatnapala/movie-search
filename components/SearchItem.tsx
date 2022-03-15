@@ -8,11 +8,11 @@ function SearchItem({ item }) {
     <li className={styles.container}>
       <ActiveLink href={`/${item['imdbID']}`}>
         <Poster
-          className={styles.thumb}
           src={item['Poster']}
           alt={item['Title']}
           width={100}
           height={100}
+          style={{ flex: '0 0 100px' }}
         ></Poster>
         <div>
           <h2 className={styles.title}>{item['Title']}</h2>
