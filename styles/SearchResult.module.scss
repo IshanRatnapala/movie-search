@@ -1,24 +1,33 @@
 @import './_variables.scss';
 
 .container {
-  height: 100%;
-  flex: 2 0 300px;
-  overflow-y: scroll;
   padding: 20px 10px 10px;
-  transition: opacity 200ms ease-in-out;
+  overflow-y: scroll;
+  height: calc(100vh - $header-height-desktop);
+
+  @media (max-width: $breakpoint-tablet) {
+    height: calc(100vh - $header-height-tablet);
+  }
 
   @media (max-width: $breakpoint-mobile) {
-    max-height: 300px;
+    height: calc(100vh - $header-height-mobile);
   }
 
   .totalCount {
-    font-size: 18px;
-    padding: 0 10px 15px;
+    padding: 10px;
     display: block;
   }
 
   .resultList {
     margin: 0;
     padding: 0;
+  }
+
+  .errorItem {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    color: $dark;
+    opacity: 0.8;
   }
 }

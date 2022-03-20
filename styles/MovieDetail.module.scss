@@ -62,6 +62,14 @@
 
         h2 {
           font-size: 36px;
+
+          @media (max-width: $breakpoint-tablet) {
+            font-size: 28px;
+          }
+
+          @media (max-width: $breakpoint-tablet) {
+            font-size: 24px;
+          }
         }
 
         .summaryBar {
@@ -81,7 +89,7 @@
             }
 
             &.ratingButton {
-              border: 1px solid $dark;
+              border: 1px solid $gray;
               padding: 4px 6px;
               border-radius: 8px;
               margin-right: 12px;
@@ -93,8 +101,8 @@
   }
 
   .detailSection {
-    border-top: 1px solid $dark;
-    border-bottom: 1px solid $dark;
+    border-top: 1px solid $gray;
+    border-bottom: 1px solid $gray;
     margin: 22px 0;
     padding: 22px 0;
   }
@@ -119,7 +127,7 @@
         right: -1px;
         width: 1px;
         height: 100%;
-        background: $dark;
+        background: $gray;
       }
 
       span:last-child {

@@ -25,7 +25,7 @@ function SearchResult({ searchQuery }) {
 
   useEffect(() => {
     setCurrentPage(1);
-    // Bugfix for multiple pagination loads when changing query with scroll
+    // Fix for multiple pagination loads while scrolled to bottom
     ref.current.scrollTop = 0;
     if (searchQuery.query) {
       (async () => {
@@ -48,7 +48,7 @@ function SearchResult({ searchQuery }) {
       ref={ref}
       style={{ opacity: loading ? '0.5' : '1' }}
     >
-      {!!searchResults.length && (
+      {!!searchResults.length ? (
         <>
           <span className={styles.totalCount}>{totalResults} RESULTS</span>
           <ul className={styles.resultList}>
@@ -57,6 +57,10 @@ function SearchResult({ searchQuery }) {
             ))}
           </ul>
         </>
+      ) : (
+        <span className={styles.errorItem}>
+          {!loading && (!!searchQuery.query ? 'No results found' : 'Search for a movie')}
+        </span>
       )}
     </section>
   );

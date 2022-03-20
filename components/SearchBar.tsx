@@ -23,17 +23,19 @@ function SearchBar({ handleSearch }) {
       </div>
 
       <div className={styles.filters}>
-        <label className={styles.yearSelect}>
-          <span>YEAR</span>
-          <MultiRangeSlider
-            min={1975}
-            max={2022}
-            onChange={({ min, max }) => {
-              setMinYear(min);
-              setMaxYear(max);
-            }}
-          />
-        </label>
+        <div className={styles.yearSelect}>
+          <label>
+            <span>YEAR</span>
+            <MultiRangeSlider
+              min={1975}
+              max={2022}
+              onChange={({ min, max }) => {
+                setMinYear(min);
+                setMaxYear(max);
+              }}
+            />
+          </label>
+        </div>
 
         <div className={styles.typeSelect} {...bindType}>
           <span>TYPE</span>

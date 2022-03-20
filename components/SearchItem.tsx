@@ -12,7 +12,7 @@ function SearchItem({ item }) {
           alt={item['Title']}
           width={100}
           height={100}
-          style={{ flex: '0 0 100px' }}
+          style={{ maxWidth: '100px' }}
         ></Poster>
         <div>
           <h2 className={styles.title}>{item['Title']}</h2>

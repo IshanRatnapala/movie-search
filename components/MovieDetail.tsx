@@ -23,44 +23,49 @@ function MovieDetail({ movie }) {
 
   return (
     <div className={styles.container}>
-      <div className={styles.titleSection}>
-        <div className={styles.titleImage}>
-          <Poster src={movie['Poster']} alt={movie['Title']}></Poster>
-        </div>
-        <div className={styles.titleDetailsContainer}>
-          <button
-            className={styles.watchListButton}
-            onClick={handleAddToWatchList.bind(null, movie)}
-          >
-            <span className={favorite ? styles.activeIcon : styles.icon}></span>
-            <span>Watchlist</span>
-          </button>
-          <div className={styles.titleDetails}>
-            <h2>{movie['Title']}</h2>
-            <ul className={styles.summaryBar}>
-              <li className={styles.ratingButton}>{movie['Rated']}</li>
-              <li>{movie['Year']}</li>
-              <li>{movie['Genre']}</li>
-              <li>{movie['Runtime']}</li>
-            </ul>
-            <div>
-              <p>{movie['Actors']}</p>
+      {movie['Response'] === 'True' ? (
+        <>
+          <div className={styles.titleSection}>
+            <div className={styles.titleImage}>
+              <Poster src={movie['Poster']} alt={movie['Title']}></Poster>
+            </div>
+            <div className={styles.titleDetailsContainer}>
+              <button
+                className={styles.watchListButton}
+                onClick={handleAddToWatchList.bind(null, movie)}
+              >
+                <span className={favorite ? styles.activeIcon : styles.icon}></span>
+                <span>Watchlist</span>
+              </button>
+              <div className={styles.titleDetails}>
+                <h2>{movie['Title']}</h2>
+                <ul className={styles.summaryBar}>
+                  <li className={styles.ratingButton}>{movie['Rated']}</li>
+                  <li>{movie['Year']}</li>
+                  <li>{movie['Genre']}</li>
+                  <li>{movie['Runtime']}</li>
+                </ul>
+                <div>
+                  <p>{movie['Actors']}</p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div className={styles.detailSection}>
-        <p>{movie['Plot']}</p>
-      </div>
-      <ul className={styles.ratingsSection}>
-        {movie['Ratings']?.map((rating) => (
-          <li key={rating['Source']}>
-            <span>{rating['Value']}</span>
-            <span>{rating['Source']}</span>
-          </li>
-        ))}
-      </ul>
+          <div className={styles.detailSection}>
+            <p>{movie['Plot']}</p>
+          </div>
+          <ul className={styles.ratingsSection}>
+            {movie['Ratings']?.map((rating) => (
+              <li key={rating['Source']}>
+                <span>{rating['Value']}</span>
+                <span>{rating['Source']}</span>
+              </li>
+            ))}
+          </ul>
+        </>
+      ) : (
+        <div>Movie not found</div>
+      )}
     </div>
   );
 }

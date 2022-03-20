@@ -6,5 +6,15 @@ $white: #ebebeb;
 $selected: #c65d7b;
 $gray: #e1e1e1;
 
-$breakpoint-mobile: 768px;
-$range-input-width: 170px;
+$breakpoint-mobile: 425px;
+$breakpoint-tablet: 768px;
+
+$range-input-width: calc(100% - 80px);
+
+$header-height: 35px;
+$search-bar-height-desktop: 115px;
+$search-bar-height-tablet: 165px;
+$search-bar-height-mobile: 180px;
+$header-height-desktop: $header-height + $search-bar-height-desktop;
+$header-height-tablet: $header-height + $search-bar-height-tablet;
+$header-height-mobile: $header-height + $search-bar-height-mobile;

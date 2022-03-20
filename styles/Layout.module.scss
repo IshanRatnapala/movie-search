@@ -1,26 +1,57 @@
 @import './_variables.scss';
 
 .container {
-  height: 100%;
+  display: grid;
+  height: 100vh;
+  grid-template-rows: $header-height $search-bar-height-desktop auto;
+  font-size: 16px;
+  overflow: hidden;
+
+  @media (max-width: $breakpoint-tablet) {
+    grid-template-rows: $header-height $search-bar-height-tablet auto;
+    font-size: 14px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    grid-template-rows: $header-height $search-bar-height-mobile auto;
+  }
 
   .main {
-    height: calc(100% - 115px - 35px);
-    display: flex;
-    flex-wrap: wrap;
-    background: $background;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    transform: translateX(0);
+    transition: all 200ms;
+
+    &.active {
+      @media (max-width: $breakpoint-mobile) {
+        transform: translateX(-100%);
+      }
+    }
 
     @media (max-width: $breakpoint-mobile) {
-      height: auto;
+      grid-template-columns: 100% 100%;
     }
 
     .rightSection {
-      height: 100%;
-      flex: 3 1 520px;
-      overflow-y: scroll;
-      font-size: 18px;
       padding: 20px 10px 10px;
-      transition: all 200ms ease-in-out;
+      overflow-y: scroll;
+      height: calc(100vh - $header-height-desktop);
+
+      @media (max-width: $breakpoint-tablet) {
+        height: calc(100vh - $header-height-tablet);
+      }
+      @media (max-width: $breakpoint-mobile) {
+        height: calc(100vh - $header-height-mobile);
+      }
+
+      .backButton {
+        color: $dark;
+        display: none;
+
+        @media (max-width: $breakpoint-mobile) {
+          display: block;
+        }
+      }
     }
   }
 }

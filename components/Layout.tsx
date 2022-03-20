@@ -4,21 +4,27 @@ import Navbar from './Navbar';
 import SearchBar from './SearchBar';
 import SearchResult from './SearchResult';
 import styles from '../styles/Layout.module.scss';
-import Router from 'next/router';
+import Router, { useRouter } from 'next/router';
+import Link from 'next/link';
 
 const Layout = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [query, setQuery] = useState({});
+  const [openDrawer, setOpenDrawer] = useState(false);
+  const router = useRouter();
 
   const handleSearch = ({ query, type, minYear, maxYear }) => {
     setQuery({ query, type, minYear, maxYear });
   };
 
   useEffect(() => {
-    const start = () => {
+    setOpenDrawer(router.asPath !== '/');
+
+    const start = (url) => {
+      setOpenDrawer(url !== '/');
       setLoading(true);
     };
-    const end = () => {
+    const end = (url) => {
       setLoading(false);
     };
     Router.events.on('routeChangeStart', start);
@@ -43,9 +49,12 @@ const Layout = ({ children }) => {
 
       <SearchBar handleSearch={handleSearch}></SearchBar>
 
-      <main className={styles.main}>
+      <main className={`${styles.main} ${openDrawer ? styles.active : ''}`}>
         <SearchResult searchQuery={query}></SearchResult>
         <section className={styles.rightSection} style={{ opacity: loading ? '0.5' : '1' }}>
+          <Link href={'/'}>
+            <a className={styles.backButton}>Back</a>
+          </Link>
           {children}
         </section>
       </main>

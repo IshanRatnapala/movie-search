@@ -7,7 +7,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 35px;
+  height: $header-height;
 
   a {
     transition: all 200ms ease-in-out;
