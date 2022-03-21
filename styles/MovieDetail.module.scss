@@ -44,6 +44,7 @@
         padding: 10px;
         cursor: pointer;
         transition: all 200ms ease-in-out;
+        background-color: #efefefcc;
 
         @media (max-width: $breakpoint-tablet) {
           width: 50px;

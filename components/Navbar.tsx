@@ -6,7 +6,7 @@ function Navbar() {
   return (
     <nav className={styles.container}>
       <h1 className={styles.heading}>
-        <Link href={'/'}>Movie Search</Link>
+        <Link href={'/'}>🍿 Movie Search</Link>
       </h1>
       <span>
         <Link href={'/watchlist'}>Watchlist</Link>

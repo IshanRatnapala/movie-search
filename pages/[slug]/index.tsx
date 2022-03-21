@@ -1,5 +1,6 @@
 import { getMovie } from '../../services';
 import MovieDetail from '../../components/MovieDetail';
+import ContentSection from '../../components/ContentSection';
 
 export async function getServerSideProps({ query }) {
   const { slug } = query;
@@ -15,7 +16,9 @@ export default function Movie({ movie }) {
       {movie['Response'] === 'True' ? (
         <MovieDetail movie={movie}></MovieDetail>
       ) : (
-        <div>Movie not found</div>
+        <ContentSection>
+          <p>😐 Movie not found</p>
+        </ContentSection>
       )}
     </>
   );

@@ -31,7 +31,9 @@ export const searchMovies = async ({ query, type, minYear, maxYear }, page: numb
       total: totalResults,
     };
   } catch (error) {
+    alert('Something went wrong with the search :(');
     console.error(error);
+    return {};
   }
 };
 

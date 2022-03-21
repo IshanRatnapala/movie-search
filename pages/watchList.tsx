@@ -16,6 +16,9 @@ export default function WatchListPage() {
   return (
     <section>
       <h1>Watchlist</h1>
+
+      {!Object.keys(watchList).length && <p>Add movies to your watch list to see them here.</p>}
+
       <ul>
         {Object.keys(watchList).map((key) => (
           <li key={key} className={styles.container}>

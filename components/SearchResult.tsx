@@ -30,7 +30,7 @@ function SearchResult({ searchQuery }) {
     if (searchQuery.query) {
       (async () => {
         setLoading(true);
-        const { items, total } = await searchMovies(searchQuery);
+        const { items = [], total = '0' } = await searchMovies(searchQuery);
         setLoading(false);
         setSearchResults(items);
         setTotalResults(total);

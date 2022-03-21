@@ -1,3 +1,9 @@
+import ContentSection from '../components/ContentSection';
+
 export default function Home() {
-  return <p>Search for a movie 🔎</p>;
+  return (
+    <ContentSection>
+      <p>🎞️ Movie search </p>
+    </ContentSection>
+  );
 }

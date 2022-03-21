@@ -54,7 +54,8 @@ const Layout = ({ children }) => {
         <section className={styles.rightSection} style={{ opacity: loading ? '0.5' : '1' }}>
           <div className={styles.backButton}>
             <Link href={'/'}>
-              <a>Back</a>
+              {/* Fix for tab navigation showing overflow content on mobile */}
+              <a tabIndex={openDrawer ? 0 : -1}>Back</a>
             </Link>
           </div>
           {children}

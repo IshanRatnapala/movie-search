@@ -11,14 +11,14 @@
     position: relative;
 
     &:hover {
-      background-color: $light;
+      background-color: $selected;
       box-shadow: 0 10px 20px rgb(0 0 0 / 20%);
       z-index: 1;
     }
 
     &.selected {
       color: $dark;
-      background-color: $light;
+      background-color: $selected;
       border-right: 4px solid $dark;
       box-shadow: 0 2px 20px 0px rgb(0 0 0 / 12%);
     }
