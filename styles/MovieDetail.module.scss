@@ -1,6 +1,6 @@
 @import './_variables.scss';
 
-@mixin wishlistIcon($url) {
+@mixin watchListIcon($url) {
   display: inline-block;
   width: 24px;
   height: 24px;
@@ -13,6 +13,11 @@
     display: flex;
     flex: 0 1 40%;
     gap: 20px;
+
+    @media (max-width: $breakpoint-mobile) {
+      flex-direction: column;
+      position: relative;
+    }
 
     .titleImage {
       flex: 0 1 40%;
@@ -40,8 +45,20 @@
         cursor: pointer;
         transition: all 200ms ease-in-out;
 
-        .icon {
-          @include wishlistIcon('/bookmark.svg');
+        @media (max-width: $breakpoint-tablet) {
+          width: 50px;
+        }
+
+        @media (max-width: $breakpoint-mobile) {
+          position: absolute;
+          top: 1px;
+          right: 1px;
+        }
+
+        .label {
+          @media (max-width: $breakpoint-tablet) {
+            display: none;
+          }
         }
 
         &:hover {
@@ -50,8 +67,12 @@
           z-index: 1;
         }
 
+        .icon {
+          @include watchListIcon('/bookmark.svg');
+        }
+
         .activeIcon {
-          @include wishlistIcon('/bookmark-fill.svg');
+          @include watchListIcon('/bookmark-fill.svg');
         }
       }
 
@@ -60,6 +81,10 @@
         flex-direction: column;
         gap: 10px;
 
+        @media (max-width: $breakpoint-mobile) {
+          text-align: center;
+        }
+
         h2 {
           font-size: 36px;
 
@@ -67,7 +92,7 @@
             font-size: 28px;
           }
 
-          @media (max-width: $breakpoint-tablet) {
+          @media (max-width: $breakpoint-mobile) {
             font-size: 24px;
           }
         }
@@ -78,6 +103,10 @@
           flex-wrap: wrap;
           align-items: center;
           padding: 0;
+
+          @media (max-width: $breakpoint-mobile) {
+            justify-content: center;
+          }
 
           li {
             &:nth-child(2),
@@ -120,6 +149,7 @@
       flex: 0 1 33.3%;
       flex-direction: column;
       gap: 10px;
+      padding: 5px;
 
       &:not(:last-child):after {
         content: '';

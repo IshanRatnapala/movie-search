@@ -15,7 +15,7 @@ export default function WatchListPage() {
 
   return (
     <section>
-      <h2>Watchlist</h2>
+      <h1>Watchlist</h1>
       <ul>
         {Object.keys(watchList).map((key) => (
           <li key={key} className={styles.container}>

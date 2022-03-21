@@ -5,7 +5,7 @@ import styles from '../styles/Navbar.module.scss';
 function Navbar() {
   return (
     <nav className={styles.container}>
-      <h1>
+      <h1 className={styles.heading}>
         <Link href={'/'}>Movie Search</Link>
       </h1>
       <span>

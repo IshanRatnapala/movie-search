@@ -52,9 +52,11 @@ const Layout = ({ children }) => {
       <main className={`${styles.main} ${openDrawer ? styles.active : ''}`}>
         <SearchResult searchQuery={query}></SearchResult>
         <section className={styles.rightSection} style={{ opacity: loading ? '0.5' : '1' }}>
-          <Link href={'/'}>
-            <a className={styles.backButton}>Back</a>
-          </Link>
+          <div className={styles.backButton}>
+            <Link href={'/'}>
+              <a>Back</a>
+            </Link>
+          </div>
           {children}
         </section>
       </main>

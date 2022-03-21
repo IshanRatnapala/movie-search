@@ -33,9 +33,10 @@ function MovieDetail({ movie }) {
               <button
                 className={styles.watchListButton}
                 onClick={handleAddToWatchList.bind(null, movie)}
+                aria-label={'Toggle Wishlist'}
               >
                 <span className={favorite ? styles.activeIcon : styles.icon}></span>
-                <span>Watchlist</span>
+                <span className={styles.label}>Watchlist</span>
               </button>
               <div className={styles.titleDetails}>
                 <h2>{movie['Title']}</h2>

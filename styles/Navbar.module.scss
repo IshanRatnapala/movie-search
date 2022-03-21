@@ -9,6 +9,11 @@
   align-items: center;
   height: $header-height;
 
+  .heading {
+    font-size: 22px;
+    margin: 0;
+  }
+
   a {
     transition: all 200ms ease-in-out;
     &:hover {
