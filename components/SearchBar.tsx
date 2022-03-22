@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import MultiRangeSlider from './MultiRangeSlider';
 import useInput from './../hooks/useInput';
 import styles from '../styles/SearchBar.module.scss';

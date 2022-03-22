@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 const useInput = (initialValue) => {
   const [value, setValue] = useState(initialValue);
   const [debouncedValue, setDebouncedValue] = useState(initialValue);
-  const DELAY = 500;
+  const DELAY = 250;
 
   useEffect(() => {
     const handler = setTimeout(() => setDebouncedValue(value), DELAY);

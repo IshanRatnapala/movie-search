@@ -1,34 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Movie Search
 
-## Getting Started
+This application is built with [Next.js](https://nextjs.org/).
 
-First, run the development server:
+## Prerequisites
+
+Next.js requires Node.js 12.22.0 or later.
+
+Install dependencies with
 
 ```bash
-npm run dev
-# or
-yarn dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Running the application
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+First, build the project:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```bash
+npm run build
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Start the server
 
-## Learn More
+```bash
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open [http://localhost:3000](http://localhost:3000) with the browser.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Frameworks and libraries used
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- [Next.js](https://nextjs.org) - used for compilation and bundling, server side rendering, routing, CSS modules with Sass support and Typescript support.
+- [multi-range-slider-react-js](https://codesandbox.io/s/ywcrm) - a simple multi range slider that was used as a base and modified for this application.
 
-## Deploy on Vercel
+## Known issues and workarounds
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- OMDB api does not support requests with a year range. A workaround is used where the request is made to OMDB api without specifying a year and filtering the results in the client with the selected year range.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- The infinite scroll will not trigger if the results from filtering by year range does not exceed the offsetHeight for a scrollbar. A possible workaround would be to compare the total results with the filtered results and request the subsequent pages until a scrollbar is needed. This has not been implemented. (Caused by the year range filter workaround)
+
+- The total result count is inaccurate when filtered by a year range. (Caused by the year range filter workaround)
